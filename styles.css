@@ -65,7 +65,7 @@ header {
   justify-content: center;
   align-items: center;
   max-width: 85rem;
-  margin: 0 auto;
+  margin: 0 auto 3rem auto;
   gap: 1.5rem;
 }
 
@@ -92,4 +92,54 @@ header {
 
 .card__info {
   padding-top: 1rem;
+}
+
+/* FOOTER  */
+
+footer {
+  background-color: hsl(0, 0%, 15%);
+  color: white;
+  letter-spacing: 1px;
+  padding-top: 3rem;
+  padding-bottom: 1.5rem;
+  text-align: center;
+}
+
+.social-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.3rem;
+  font-size: 1.5rem;
+  list-style: none;
+  padding-bottom: 1.2rem;
+}
+
+.social-links li a {
+  color: white;
+}
+
+.social-links li {
+  transform: scale(1);
+  transition: all .2s ease-in-out;
+}
+
+.social-links li:hover {
+  transform: scale(1.15);
+}
+
+.copyright {
+  font-size: .9rem;
+  opacity: .65;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
 }
