@@ -38,8 +38,8 @@ header {
 .tooltip {
   font-size: 1rem;
   position: absolute;
-  top: 6rem;
-  right: 2rem;
+  top: 6.1rem;
+  right: 2.2rem;
   max-width: 19rem;
   padding: .75rem 1rem;
   border-radius: 25px;
@@ -52,7 +52,7 @@ header {
 .tooltip::before {
   content: '';
   position: absolute;
-  left: 88%;
+  left: 88.25%;
   top: -20%;
   transform: translatex(-30%);
   border: 15px solid;
@@ -70,29 +70,39 @@ header {
   display: flex;
   align-items: center;
   max-width: 81.5rem;
-  border: 2px solid blue;
   margin: 0 auto;
+  flex-direction: column;
 }
 
 .search-form {
-  margin: 0 auto;
-  border: 2px solid red;
+  width: 100%;
+  display: flex;
+  position: relative;
+
 }
 
 #searchbar {
-  border:2px solid hsl(0, 0%, 15%);
-  padding: 1rem;
-  /* width: 50%; */
-}
-
-.search-btn {
-  border: 2px solid hsl(0, 0%, 15%);
+  border: 3px solid hsl(0, 0%, 15%);
   cursor: pointer;
   padding: 1rem;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 1rem;
+}
+
+.search-icon {
+  color: hsl(0, 0%, 15%);
+  position: absolute;
+  right: 1.15rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.search-btn:hover {
+  background: hsla(0, 0%, 15%, .6);
 }
 
 .poke-type-selection {
-  border: 2px solid green;
+  width: 15rem;
+  padding-top: 1rem;
 }
 
 /* POKEMON CONTAINER */
@@ -117,14 +127,14 @@ header {
   background-color: rgba(241, 239, 239, .65);
   box-shadow: 0 3px 15px rgba(100, 100, 100, 0.35);
   backdrop-filter: blur(5rem);
-  -webkit-backdrop-filter: blur(5rem);
+  -webkit-backdrop-filter: blur(5rem); 
   transform: scale(1);
   transition: all .25s ease-in;
 }
 
 .pokemon:hover {
   transform: scale(1.075);
-}
+} 
 
 .card__img-container {
   background: white;
@@ -216,11 +226,31 @@ footer {
   transform: scale(1.1);
 }
 
+@media (min-width: 31.5rem) {
+  .search-options {
+    flex-direction: row;
+    gap: 2rem;
+    padding-inline: 10%;
+  }
+}
+
+@media (min-width: 54rem) {
+
+  #searchbar {
+    width: 32rem;
+  }
+}
+
+
 @media (min-width: 62.5rem) {
   .page-up {
     position: absolute;
     right: 3rem;
     bottom: 3rem;
   }
-  
+
+  .search-options {
+    padding-inline: 0;
+  }
+
 }

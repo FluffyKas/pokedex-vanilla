@@ -1,15 +1,15 @@
 // TOOLTIP
 
-const tooltip_icon = document.querySelector(".tooltip-icon");
-const tooltip = document.querySelector(".tooltip");
+// const tooltip_icon = document.querySelector(".tooltip-icon");
+// const tooltip = document.querySelector(".tooltip");
 
-tooltip_icon.addEventListener("mouseover", () => {
-  tooltip.style.visibility= 'visible';
-});
+// tooltip_icon.addEventListener("mouseover", () => {
+//   tooltip.style.visibility= 'visible';
+// });
 
-tooltip_icon.addEventListener("mouseleave", () => {
-  tooltip.style.visibility= 'hidden';
-});
+// tooltip_icon.addEventListener("mouseleave", () => {
+//   tooltip.style.visibility= 'hidden';
+// });
 
 // POKEDEX
 
@@ -34,11 +34,9 @@ const type_colors = {
 
 const main_types = Object.keys(type_colors);
 
-console.log(main_types);
-
 const fetchPokemons = async () => {
   for(let i=1; i<=pokemonsNumber; i++) {
-    await getPokemon(i);
+    const pokemons = await getPokemon(i);
   }
 }
 
@@ -79,3 +77,26 @@ function createPokemonCard(pokemon) {
   pokemonElement.innerHTML = pokeInnerHTML;
   container.appendChild(pokemonElement);
 }
+
+
+// THIS DOESN'T WORK :(
+
+const nameArray = document.querySelectorAll(".poke-name");
+console.log(nameArray);
+
+
+
+
+
+
+
+// SELECT FILTER
+
+// const select = document.getElementById("poke-types");
+// main_types.sort();
+
+// main_types.forEach(type => {
+//   let option = document.createElement("option");
+//   select.appendChild(option);
+//   option.innerText = type[0].toUpperCase() + type.slice(1);
+// });
