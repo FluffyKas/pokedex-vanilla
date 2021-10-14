@@ -17,7 +17,8 @@ body {
 header {
   position: relative;
   padding-top: 2.5rem;
-  padding-bottom: 3.5rem;
+  background-color: hsl(0, 0%, 15%);
+  color: white;
 }
 
 .title {
@@ -43,6 +44,7 @@ header {
   padding: .75rem 1rem;
   border-radius: 25px;
   background: white;
+  color: black;
   letter-spacing: 1px;
   visibility: hidden; 
 }
@@ -57,6 +59,42 @@ header {
   border-color: transparent transparent white transparent;
 }
 
+.search-options-wrapper {
+  background: gray;
+  margin-top: 3.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.search-options {
+  display: flex;
+  align-items: center;
+  max-width: 81.5rem;
+  border: 2px solid blue;
+  margin: 0 auto;
+}
+
+.search-form {
+  margin: 0 auto;
+  border: 2px solid red;
+}
+
+#searchbar {
+  border:2px solid hsl(0, 0%, 15%);
+  padding: 1rem;
+  /* width: 50%; */
+}
+
+.search-btn {
+  border: 2px solid hsl(0, 0%, 15%);
+  cursor: pointer;
+  padding: 1rem;
+}
+
+.poke-type-selection {
+  border: 2px solid green;
+}
+
 /* POKEMON CONTAINER */
 
 #pokemon-container {
@@ -64,34 +102,52 @@ header {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  max-width: 85rem;
-  margin: 0 auto 3rem auto;
+  max-width: 81.5rem;
+  margin: 3rem auto;
   gap: 1.5rem;
 }
 
-.card {
+.pokemon {
   width: 15rem;
   height: 20rem;
-  background: rgb(240, 240, 240);
-  border-radius: 10px;
+  border-radius: 15px;
+  cursor: pointer;
   padding: 1.5rem;
   text-align: center;
+  background-color: rgba(241, 239, 239, .65);
+  box-shadow: 0 3px 15px rgba(100, 100, 100, 0.35);
+  backdrop-filter: blur(5rem);
+  -webkit-backdrop-filter: blur(5rem);
+  transform: scale(1);
+  transition: all .25s ease-in;
+}
+
+.pokemon:hover {
+  transform: scale(1.075);
 }
 
 .card__img-container {
   background: white;
   border-radius: 50%;
-  height: 10rem;
-  width: 10rem;
+  height: 9rem;
+  width: 9rem;
   margin: 0 auto;
 }
 
 .poke-img {
-  margin-top: 1.5rem;
+  margin-top: 1rem;
 }
 
 .card__info {
-  padding-top: 1rem;
+  padding-top: 1.5rem;
+}
+
+.poke-name {
+  margin-top: .5rem;
+}
+
+.poke-type {
+  margin-top: .5rem;
 }
 
 /* FOOTER  */
@@ -100,8 +156,9 @@ footer {
   background-color: hsl(0, 0%, 15%);
   color: white;
   letter-spacing: 1px;
-  padding-top: 3rem;
-  padding-bottom: 1.5rem;
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+  position: relative;
   text-align: center;
 }
 
@@ -142,4 +199,28 @@ footer {
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
+}
+
+.page-up {
+  color: white;
+  display: inline-block;
+  font-size: 3rem;
+  margin-top: 2rem;
+  opacity: .65;
+  transform: scale(1);
+  transition: all .2s ease;
+}
+
+.page-up:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+@media (min-width: 62.5rem) {
+  .page-up {
+    position: absolute;
+    right: 3rem;
+    bottom: 3rem;
+  }
+  
 }

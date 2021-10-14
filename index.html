@@ -14,6 +14,29 @@
     <h1 class="title">Pokédex</h1>
     <i class="tooltip-icon far fa-question-circle"></i>
     <span class="tooltip">This isn't an exhaustive list of pokémons, only the ones appearing in the Kanto regional Pokédex. For more information please consult your local Pokémon Professor!</span>
+
+    <div class="search-options-wrapper">
+      <div class="search-options">
+
+        <div class="search-form-wrapper">
+          <form class="search-form" action="">
+            <input type="text" name="searchbar" id="searchbar" placeholder="Type in a pokémon name...">
+            <button class="search-btn" type="submit"><i class="fas fa-search"></i></button>
+          </form>
+        </div>
+
+        <div class="poke-type-selection">
+          <label for="poke-types">Select a type: </label>
+          <select name="poke-types" id="poke-types">
+            <option value="fire">Fire</option>
+            <option value="grass">Grass</option>
+            <option value="poison">Poison</option>
+          </select>
+        </div>
+
+      </div>
+    </div>
+
   </header>
 
   <main>
@@ -29,7 +52,10 @@
     <p class="copyright">Created with 
       <span><i class="far fa-heart" aria-hidden="true"></i></span>
       <span class="sr-only">love</span>
-      by FluffyKas &copy; 2021</p>
+      by FluffyKas &copy; 2021
+    </p>
+
+    <a href="#" class="page-up" aria-label="To the top of the page"><i class="far fa-arrow-alt-circle-up"></i></a>
   </footer>
 
 <script src="index.js"></script>
