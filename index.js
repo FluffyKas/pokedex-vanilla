@@ -1,15 +1,16 @@
 // TOOLTIP
 
-// const tooltip_icon = document.querySelector(".tooltip-icon");
-// const tooltip = document.querySelector(".tooltip");
+const tooltip_icon = document.querySelector(".tooltip-icon");
+const tooltip = document.querySelector(".tooltip");
 
-// tooltip_icon.addEventListener("mouseover", () => {
-//   tooltip.style.visibility= 'visible';
-// });
+tooltip_icon.addEventListener("mouseover", () => {
+  tooltip.style.visibility= 'visible';
+});
 
-// tooltip_icon.addEventListener("mouseleave", () => {
-//   tooltip.style.visibility= 'hidden';
-// });
+tooltip_icon.addEventListener("mouseleave", () => {
+  tooltip.style.visibility= 'hidden';
+});
+
 
 // POKEDEX
 
@@ -79,24 +80,49 @@ function createPokemonCard(pokemon) {
 }
 
 
-// THIS DOESN'T WORK :(
+// SEARCHBAR
 
-const nameArray = document.querySelectorAll(".poke-name");
-console.log(nameArray);
+const form = document.querySelector(".search-form")
+form.addEventListener("keyup", (e) => {
+  const keyword = e.target.value.toLowerCase();
+  const nameArray = document.querySelectorAll(".poke-name");
 
+  e.preventDefault()
+  Array.from(nameArray).forEach((name)=> {
+    const pokeName = name.textContent;
+    if(pokeName.toLowerCase().indexOf(keyword)!=(-1)) {
+      name.parentElement.parentElement.parentElement.style.display = "block";
+    } else {
+      name.parentElement.parentElement.parentElement.style.display = "none";
+    }
+  })
 
-
-
-
+})
 
 
 // SELECT FILTER
 
-// const select = document.getElementById("poke-types");
-// main_types.sort();
+const select = document.getElementById("poke-types");
+main_types.sort();
 
-// main_types.forEach(type => {
-//   let option = document.createElement("option");
-//   select.appendChild(option);
-//   option.innerText = type[0].toUpperCase() + type.slice(1);
-// });
+main_types.forEach(type => {
+  let option = document.createElement("option");
+  select.appendChild(option);
+  option.innerText = type[0].toUpperCase() + type.slice(1);
+});
+
+select.addEventListener("change", (e) => {
+  const pokeTypes = document.querySelectorAll(".poke-type");
+  option = e.target.value.toLowerCase();
+
+  e.preventDefault()
+  Array.from(pokeTypes).forEach((type)=> {
+    const pokeType = type.textContent;
+    if(pokeType.indexOf(option)!=(-1)) {
+      type.parentElement.parentElement.parentElement.style.display = "block";
+    } else {
+      type.parentElement.parentElement.parentElement.style.display = "none";
+    }
+  })
+
+})

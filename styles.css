@@ -72,13 +72,13 @@ header {
   max-width: 81.5rem;
   margin: 0 auto;
   flex-direction: column;
+  gap: .5rem;
 }
 
 .search-form {
   width: 100%;
   display: flex;
   position: relative;
-
 }
 
 #searchbar {
@@ -87,6 +87,23 @@ header {
   padding: 1rem;
   font-family: 'Ubuntu', sans-serif;
   font-size: 1rem;
+}
+
+#searchbar:focus {
+  /* Provides a fallback style for browsers
+     that don't support :focus-visible */
+  outline: 3px dotted white;
+}
+
+#searchbar:focus:not(:focus-visible) {
+  /* Removes the focus indicator on mouse-focus for browsers
+     that do support :focus-visible */
+  outline: none;
+}
+
+#searchbar:focus-visible {
+  /* for browsers that do support :focus-visible */
+  outline: 3px dotted white;
 }
 
 .search-icon {
@@ -101,8 +118,38 @@ header {
 }
 
 .poke-type-selection {
-  width: 15rem;
-  padding-top: 1rem;
+  width: 17.7rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.poke-type-selection label {
+  font-size: 1.2rem;
+}
+
+#poke-types {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 1.2rem;
+  padding: .5rem 1rem;
+  width: 70%;
+}
+
+#poke-types:focus {
+  /* Provides a fallback style for browsers
+     that don't support :focus-visible */
+  outline: 3px dotted white;
+}
+
+#poke-types:focus:not(:focus-visible) {
+  /* Removes the focus indicator on mouse-focus for browsers
+     that do support :focus-visible */
+  outline: none;
+}
+
+#poke-types:focus-visible {
+  /* for browsers that do support :focus-visible */
+  outline: 3px dotted white;
 }
 
 /* POKEMON CONTAINER */
@@ -186,6 +233,23 @@ footer {
   color: white;
 }
 
+.social-links li a:focus {
+  /* Provides a fallback style for browsers
+     that don't support :focus-visible */
+  outline: 3px dotted white;
+}
+
+.social-links li a:focus:not(:focus-visible) {
+  /* Removes the focus indicator on mouse-focus for browsers
+     that do support :focus-visible */
+  outline: none;
+}
+
+.social-links li a:focus-visible {
+  /* for browsers that do support :focus-visible */
+  outline: 3px dotted white;
+}
+
 .social-links li {
   transform: scale(1);
   transition: all .2s ease-in-out;
@@ -226,23 +290,42 @@ footer {
   transform: scale(1.1);
 }
 
+.page-up:focus {
+  /* Provides a fallback style for browsers
+     that don't support :focus-visible */
+  outline: 3px dotted white;
+}
+
+.page-up:focus:not(:focus-visible) {
+  /* Removes the focus indicator on mouse-focus for browsers
+     that do support :focus-visible */
+  outline: none;
+}
+
+.page-up    :focus-visible {
+  /* for browsers that do support :focus-visible */
+  outline: 3px dotted white;
+}
+
+
 @media (min-width: 31.5rem) {
   .search-options {
-    flex-direction: row;
-    gap: 2rem;
     padding-inline: 10%;
   }
 }
 
 @media (min-width: 54rem) {
 
-  #searchbar {
+  #searchbar,
+  .poke-type-selection {
     width: 32rem;
   }
+
+  
 }
 
 
-@media (min-width: 62.5rem) {
+@media (min-width: 64.5rem) {
   .page-up {
     position: absolute;
     right: 3rem;
@@ -251,6 +334,8 @@ footer {
 
   .search-options {
     padding-inline: 0;
+    flex-direction: row;
+    gap: 2rem;
   }
 
 }
