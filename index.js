@@ -37,7 +37,7 @@ const main_types = Object.keys(type_colors);
 
 const fetchPokemons = async () => {
   for(let i=1; i<=pokemonsNumber; i++) {
-    const pokemons = await getPokemon(i);
+    await getPokemon(i);
   }
 }
 
@@ -78,7 +78,6 @@ function createPokemonCard(pokemon) {
   pokemonElement.innerHTML = pokeInnerHTML;
   container.appendChild(pokemonElement);
 }
-
 
 // SEARCHBAR
 
