@@ -30,7 +30,7 @@ This project was my introduction to using APIs and asynchronous Javascript. I'm 
 
 #### padStart
 
-I used padStart to style the display of IDs, so each ID has the same length regardless of where the pokémon is on the list, by adding some "dummy" zeros:
+I used [padStart](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/padStart) to style the display of IDs, so each ID has the same length regardless of where the pokémon is on the list, by adding some "dummy" zeros:
 
 ````
 <span class="poke-id">#${pokemon.id.toString().padStart(3, '0')}</span>
